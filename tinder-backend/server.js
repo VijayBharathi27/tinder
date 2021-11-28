@@ -5,7 +5,7 @@ import Cors from 'cors';
 import Cards from "./dbCards.js";
 //App config
 const app = express();
-const port = /*process.env.PORT ||*/ 8001
+const port = /*process.env.PORT ||*/ 8000
 const connection_url='mongodb+srv://admin:admin123@cluster0.m5yxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 //Middleware
@@ -53,4 +53,4 @@ app.get('/tinder/cards',(req,res)=>{
     })
 })
 //Listeners
-app.listen(port,()=> console.log('listening on local host 8001'));
+app.listen(port,()=> console.log('listening on local host 8000'));

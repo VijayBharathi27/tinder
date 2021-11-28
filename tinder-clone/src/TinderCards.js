@@ -5,12 +5,12 @@ import axios from 'axios';
 function TinderCards() {
     const [people, setPeople]=useState([]);
 
-    useEffect(()=>{
-        async function fetchData(){
-            const req = await axios.get('/tinder/cards');
-            setPeople(req.data);
-        }
-    })
+     useEffect(()=>{
+         async function fetchData(){
+             const req = await axios.get('/tinder/cards');
+             setPeople(req.data);
+         }
+     })
 
     const swiped =(direction,nameToDelete)=>{
         console.log("removing"+nameToDelete);
