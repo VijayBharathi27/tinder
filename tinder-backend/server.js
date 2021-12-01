@@ -52,5 +52,18 @@ app.get('/tinder/cards',(req,res)=>{
         }
     })
 })
+ app.delete('/tinder/cards',(req,res)=>{
+    const name = req.body.name;
+   Cards.deleteMany({name},(err,data)=>{
+         if(err){
+             res.status(500).send(err)
+         }else{
+    res.status(201).send(data)
+}
+     })
+ })
 //Listeners
-app.listen(port,()=> console.log('listening on local host 8000'));
+app.listen(port, function(err){
+    if (err) console.log(err);
+    console.log("Server listening on PORT", port);
+});
